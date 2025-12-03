@@ -45,10 +45,17 @@ function animate() {
 }
 
 // ウィンドウサイズ変更時のリサイズ処理
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+
+// ゲーム開始！
+document.addEventListener('DOMContentLoaded', () => {
+    initThreeJS();
+    startGame();
+
+    // 【✅ ここを追加/修正します】
+    // 「次のステップへ挑戦」または「再挑戦」ボタンにイベントリスナーを設定
+    restartButton.onclick = () => {
+        startGame(); // クリックされたら、ゲームを初期状態に戻して開始
+    };
 });
 
 // --- 2. ゲームロジック ---
