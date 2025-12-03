@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小学4年算数 3Dチャレンジ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+</div>
+
+<div id="ui-overlay">
+    <header>
+        <h1 id="step-title">🌟 ステップ 1: 大きな数の世界 🌟</h1>
+        <p id="score-display">正解数: 0 / 10</p>
+    </header>
+
+    <section id="question-area">
+        <p id="question-text">ここに問題文が表示されます。</p>
+        <div id="answer-options">
+        </div>
+    </section>
+
+    <section id="feedback-area" class="hidden">
+        <h2 id="feedback-text"></h2>
+        <button id="next-button">次の問題へ</button>
+    </section>
+
+    <section id="result-area" class="hidden">
+        <h2>チャレンジ結果</h2>
+        <p id="final-score"></p>
+        <p id="result-message"></p>
+        <button id="restart-button">次のステップへ挑戦</button>
+    </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

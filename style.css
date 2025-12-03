@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* UIを3Dの上に表示 */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* 半透明の背景 */
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+#question-area {
+    background: rgba(40, 40, 100, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    max-width: 600px;
+}
+
+#question-text {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+#answer-options button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#answer-options button:hover {
+    background-color: #45a049;
+}
+
+#feedback-area, #result-area {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
