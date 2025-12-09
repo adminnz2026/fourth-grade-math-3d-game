@@ -111,7 +111,9 @@ const finalScore = document.getElementById('final-score');
 const resultMessage = document.getElementById('result-message');
 const restartButton = document.getElementById('restart-button');
 const questionArea = document.getElementById('question-area');
+const stepTitle = document.getElementById('step-title');
 
+let currentStep = 1;
 
 // 問題のシャッフルと初期設定
 function startGame() {
@@ -120,6 +122,7 @@ function startGame() {
     currentQuestionIndex = 0;
     correctCount = 0;
     scoreDisplay.textContent = `正解数: ${correctCount} / 10`;
+    stepTitle.textContent = `🌟 ステップ ${currentStep}: 大きな数の世界 🌟`;
 
     resultArea.classList.add('hidden');
     feedbackArea.classList.add('hidden');
@@ -196,10 +199,16 @@ function showResults() {
         resultMessage.textContent = "🎉 合格！次のステップに挑戦できます！";
         restartButton.textContent = "ステップ2へ進む";
         // 3Dオブジェクトを派手に光らせる演出など
+        // 合格時は自動的に次のステップへ移行させる
+        currentStep += 1;
+        setTimeout(() => {
+            startGame();
+        }, 1200);
     } else {
         resultMessage.textContent = "😢 残念ながら不合格です。もう一度ステップ1に挑戦しましょう。";
         restartButton.textContent = "ステップ1に再挑戦";
         // 3Dオブジェクトを落ち着かせる演出など
+        currentStep = 1;
     }
 }
 
